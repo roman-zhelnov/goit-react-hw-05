@@ -11,5 +11,20 @@ const api = axios.create({
 
 export const fetchTrendingMovies = async () => {
   const { data } = await api.get(`/trending/movie/day?language=en-US`);
+  return data.results;
+};
+
+export const fetchMoviesById = async (movieId) => {
+  const { data } = await api.get(`/movie/${movieId}?language=en-US`);
   return data;
+};
+
+export const fetchMoviesReviewsById = async (movieId) => {
+  const { data } = await api.get(`/movie/${movieId}/reviews?language=en-US`);
+  return data.results;
+};
+
+export const fetchMoviesActorsById = async (movieId) => {
+  const { data } = await api.get(`/movie/${movieId}/credits?language=en-US`);
+  return data.cast;
 };

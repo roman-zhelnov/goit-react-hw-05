@@ -5,8 +5,12 @@ const MovieList = () => {
   const [movies, setMovies] = useState;
   useEffect(() => {
     const getTrendingMovies = async () => {
-      const data = await fetchTrendingMovies();
-      setMovies(data);
+      try {
+        const movies = await fetchTrendingMovies();
+        setMovies(movies.results);
+      } catch (error) {
+        console.log(error);
+      }
     };
     getTrendingMovies();
   }, []);

@@ -1,0 +1,18 @@
+.headerBox {
+  background-color: black;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.link {
+  color: aliceblue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.activeLink {
+  color: blueviolet;
+}

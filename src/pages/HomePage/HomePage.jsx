@@ -27,6 +27,7 @@ const HomePage = () => {
   if (error) return <h2>{error}</h2>;
   return (
     <div>
+      <h2>Trending movies today</h2>
       <MovieList movies={movies} />
     </div>
   );

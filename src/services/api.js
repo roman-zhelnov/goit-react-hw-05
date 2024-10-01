@@ -28,3 +28,11 @@ export const fetchMoviesActorsById = async (movieId) => {
   const { data } = await api.get(`/movie/${movieId}/credits?language=en-US`);
   return data.cast;
 };
+
+export const fetchMoviesByQuery = async (query) => {
+  const { data } = await api.get(
+    `/search/movie?query=${query}&page=1&include_adult=false&language=en-US`
+  );
+
+  return data.results;
+};

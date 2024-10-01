@@ -1,5 +1,11 @@
-import { useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { Suspense, useEffect, useRef, useState } from "react";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { fetchMoviesById } from "../../services/api";
 import Loader from "../../components/Loader/Loader";
 
@@ -8,6 +14,9 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  const goBackLink = useRef(location.state ?? "/movies");
+
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
@@ -32,6 +41,7 @@ const MovieDetailsPage = () => {
   );
   return (
     <div>
+      <Link to={goBackLink.current}>Go Back</Link>
       <div>
         <img
           src={
@@ -57,7 +67,9 @@ const MovieDetailsPage = () => {
         <NavLink to="cast">Cast</NavLink>
         <NavLink to="reviews">Reviews</NavLink>
       </div>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

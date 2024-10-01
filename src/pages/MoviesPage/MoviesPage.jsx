@@ -11,6 +11,7 @@ const MoviesPage = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+
   const query = searchParams.get("query") ?? "";
   const initialValues = {
     query: "",

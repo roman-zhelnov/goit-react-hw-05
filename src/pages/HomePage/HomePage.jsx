@@ -1,3 +1,4 @@
+import s from "./HomePage.module.css";
 import { useEffect } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 import { useState } from "react";
@@ -26,8 +27,8 @@ const HomePage = () => {
   if (isLoading) return <Loader />;
   if (error) return <h2>{error}</h2>;
   return (
-    <div>
-      <h2>Trending movies today</h2>
+    <div className={s.boxHomePage}>
+      <h2 className={s.text}>Trending movies today</h2>
       <MovieList movies={movies} />
     </div>
   );

@@ -2,6 +2,8 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   margin: 0;
+  background-color: rgb(37, 19, 48);
+  color: aliceblue;
 }
 
 h1,

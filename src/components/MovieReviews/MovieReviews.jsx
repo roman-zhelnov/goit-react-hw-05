@@ -1,3 +1,4 @@
+import s from "./Moviereviews.module.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMoviesReviewsById } from "../../services/api";
@@ -29,7 +30,7 @@ const MovieReviews = () => {
 
   return (
     <div>
-      <ul>
+      <ul className={s.revList}>
         {reviews.length > 0 ? (
           reviews.map((rev) => (
             <li key={rev.id}>

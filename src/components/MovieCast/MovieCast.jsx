@@ -1,3 +1,4 @@
+import s from "./MovieCast.module.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchMoviesActorsById } from "../../services/api";
@@ -28,10 +29,11 @@ const MovieCast = () => {
 
   return (
     <div>
-      <ul>
+      <ul className={s.castList}>
         {cast.map((actor) => (
           <li key={actor.id}>
             <img
+              className={s.img}
               src={
                 actor.profile_path
                   ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`

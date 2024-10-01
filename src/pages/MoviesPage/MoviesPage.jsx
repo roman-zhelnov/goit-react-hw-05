@@ -1,3 +1,4 @@
+import s from "./MoviePage.module.css";
 import { Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { fetchMoviesByQuery } from "../../services/api";
@@ -52,11 +53,17 @@ const MoviesPage = () => {
   if (isLoading) return <Loader />;
   if (error) return <h2>{error}</h2>;
   return (
-    <div>
+    <div className={s.boxMoviePage}>
       <Formik initialValues={initialValues} onSubmit={handelSubmit}>
-        <Form>
-          <Field name="query" placeholder="Enter your movie" />
-          <button type="submit">Search</button>
+        <Form className={s.form}>
+          <Field
+            className={s.input}
+            name="query"
+            placeholder="Enter your movie"
+          />
+          <button className={s.btn} type="submit">
+            Search
+          </button>
         </Form>
       </Formik>
       {query && query.length > 0 ? <MovieList movies={movies} /> : null}

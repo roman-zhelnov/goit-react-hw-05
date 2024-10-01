@@ -1,0 +1,17 @@
+.movieList {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: cursive;
+  font-size: 20px;
+}
+
+.movieLink {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.movieLink:hover {
+  color: blueviolet;
+}

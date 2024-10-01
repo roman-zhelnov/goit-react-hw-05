@@ -1,0 +1,61 @@
+.boxMovieDetails {
+  padding: 20px;
+}
+
+.boxGoBack {
+  margin-bottom: 10px;
+}
+
+.goBack {
+  text-decoration: none;
+  font-size: 20px;
+  color: aliceblue;
+  font-family: cursive;
+  &:hover {
+    color: blueviolet;
+  }
+}
+
+.movie {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  .img {
+    max-width: 400px;
+    max-height: 500px;
+  }
+}
+
+.infoMovie {
+  font-family: cursive;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h2,
+  h3 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 20px;
+  }
+}
+
+.navBox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.link {
+  color: aliceblue;
+  font-family: cursive;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.activeLink {
+  color: blueviolet;
+}

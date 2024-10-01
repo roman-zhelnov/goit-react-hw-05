@@ -1,0 +1,8 @@
+.boxHomePage {
+  padding: 20px;
+  text-align: start;
+  .text {
+    font-size: 32px;
+    color: brown;
+  }
+}
